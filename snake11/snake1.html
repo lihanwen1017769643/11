@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇 1.0</title>
+    <script type="text/javascript" src="./script/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./script/snake1.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/snake1.css" />
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <!-- 中央游戏主屏幕 -->
+    <div id="canvas" tabindex="0">
+        <div id="snakeHead"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="snakeTail"></div>
+        <div id="food"></div>
+    </div>
+
+    <!-- 开始游戏按钮 -->
+    <div class="b-wrapper"><input type="button" id="start" value="START" /></div>
+
+    <!-- 左侧游戏信息统计栏 -->
+    <div id="result">
+        <p>当前数字：<span id="current_num"></span></p>
+        <p>目标数字：<span id="tgt_num"></span></p>
+        <p>游戏轮数：<span id="turn"></span></p>
+    </div>
+
+    <!-- 右侧游戏记录统计栏 -->
+    <!-- <div id="record">
+        <p>最少通关轮数：<span id="least"></span></p>
+        <p>最多通关轮数：<span id="most"></span></p>
+    </div> -->
+
+    <!-- 中央通关游戏祝贺 -->
+    <!-- <div id="finish">
+        <p style="margin-top:20px;">恭喜你顺利达成目标数字！</p>
+        <p>本轮游戏轮数：<span id="final_turn"></span></p>
+        <div class="b-wrapper"><input type="button" id="ok" value="OK" /></div>
+    </div> -->
+
+    <!-- 食物计算框 -->
+    <div id="comp">
+        <p style="margin-top:20px;">当前数字：<span id="comp_current_num"></span></p>
+        <p>食物数字：<span id="comp_food_num"></span></p>
+        <p>请选择本次的计算符号：</p>
+        <p class="hover" id="plus"><i class=" fas fa-solid fa-plus"></i></p>
+        <p class="hover" id="minus"><i class=" fas fa-solid fa-minus"></i></p>
+        <p class="hover" id="xmark"><i class="  fas fa-solid fa-x" style="font-weight:bold;">X</i></p>
+        <!-- <p id="xmark"><i class="fas fa-solid fa-xmark"></i></p> -->
+        <p class="hover" id="divide"><i class=" fas fa-solid fa-divide"></i></p>
+    </div>
+
+    <!-- 神奇数显示框 -->
+    <div id="magic">
+        <p>请选择你希望的数字大小：</p>
+        <div class="c1 hover"></div>
+        <div class="c2 hover"></div>
+        <div class="c3 hover"></div>
+        <div class="c4 hover"></div>
+    </div>
+
+    <!-- 游戏开始提示框 -->
+    <div id="info">
+        <p>欢迎来到贪吃蛇1.0！</p>
+        <p>起始数字：<span id="initial"></span></p>
+        <p>目标数字：<span id="target"></span></p>
+        <div class="b-wrapper"><input type="button" id="play" value="PLAY"></div>
+    </div>
+    <!-- <script src="//yanhaijing.com/assets/plugin/tongji/baidu.js"></script> -->
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/snake.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/snake.css" />
+</head>
+
+<body>
+    <div id="canvas" tabindex="0">
+        <div id="snakeHead"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="snakeTail"></div>
+        <div id="food"></div>
+    </div>
+    <input type="button" id="start" value="start" />
+    <script src="//yanhaijing.com/assets/plugin/tongji/baidu.js"></script>
+</body>
+
+</html> -->
