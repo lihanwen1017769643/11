@@ -57,10 +57,10 @@ def main():
 
     print('==> Preparing dataset %s' % args.trainroot)
     trainset = dataset.Dataset(root=args.trainroot, transform=transform['val_train'])
-    train_loader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers, pin_memory=True)
+    train_loader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers, pin_memory=False)
 
     valset = dataset.TestDataset(root=args.valroot, transform=transform['val_test'])
-    val_loader = data.DataLoader(valset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers, pin_memory=True)
+    val_loader = data.DataLoader(valset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers, pin_memory=False)
 
     model = make_model(args)
 
@@ -164,7 +164,7 @@ def train(train_loader, model, criterion, optimizer, epoch, use_cuda):
         data_time.update(time.time() - end)
 
         if use_cuda:
-            inputs, targets = inputs.cuda(), targets.cuda(async=True)
+            inputs, targets = inputs.cuda(), targets.cuda()
         inputs, targets = torch.autograd.Variable(inputs), torch.autograd.Variable(targets)
 
         # compute output

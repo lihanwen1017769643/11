@@ -29,9 +29,9 @@ parser.add_argument('--image-size', default=288, type=int, metavar='N',
                     help='the train image size')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('--train-batch', default=64, type=int, metavar='N',
+parser.add_argument('--train-batch', default=16, type=int, metavar='N',
                     help='train batchsize (default: 256)')
-parser.add_argument('--test-batch', default=32, type=int, metavar='N',
+parser.add_argument('--test-batch', default=8, type=int, metavar='N',
                     help='test batchsize (default: 200)')
 parser.add_argument('--optimizer', default='sgd',
                          choices=['sgd', 'rmsprop', 'adam', 'AdaBound', 'radam'], metavar='N',
@@ -58,7 +58,7 @@ parser.add_argument('--beta2', default=0.999, type=float, metavar='M',
                          help='beta2 for Adam (default: 0.999)')
 parser.add_argument('--weight-decay', '--wd', default=1e-4, type=float,
                     metavar='W', help='weight decay (default: 1e-4)')
-parser.add_argument('--final-lr', '--fl', default=1e-3,type=float,
+parser.add_argument('--final-lr', '--fl', default=1e-3, type=float,
                     metavar='W', help='weight decay (default: 1e-3)')
 # Checkpoints
 parser.add_argument('-c', '--checkpoint', default='/data0/search/qlmx/clover/garbage/res_16_288_last1', type=str, metavar='PATH',
@@ -82,7 +82,7 @@ parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
 parser.add_argument('--pretrained', dest='pretrained', action='store_true',
                     help='use pre-trained model')
 #Device options
-parser.add_argument('--gpu-id', default='0, 1, 2, 3', type=str,
-                    help='id(s) for CUDA_VISIBLE_DEVICES')
+parser.add_argument('--gpu-id', default='0, 1', type=str,
+                    help='id(s) for CUDA_VISIBLE_DEVICES') # default='0, 1, 2, 3'
 
 args = parser.parse_args()
