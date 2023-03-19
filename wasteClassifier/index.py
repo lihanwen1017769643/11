@@ -11,7 +11,6 @@ import os
 # Flask Setup
 #################################################
 
-# UPLOAD_FOLDER = '/classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03/static/'
 UPLOAD_FOLDER = './static/'
 
 app = Flask(__name__)
@@ -19,15 +18,14 @@ app = Flask(__name__)
 app.secret_key = 'lhwww257248'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Route to HTML
-
 
 @app.route('/')
+# Route to HTML
 def index():
     return render_template('index.html')
 
 
-@app.route("/", methods=['POST'])  # /file
+@app.route("/", methods=['POST'])
 # Our function for pushing the image to the classifier model
 def submit_image():
     if request.method == 'POST':
@@ -46,7 +44,7 @@ def submit_image():
             getPrediction(filename)
             answer, probability_results, filename = getPrediction(filename)
             flash(answer)
-            flash(probability_results)  # accuracy
+            flash(probability_results)
             flash(filename)
             return redirect('/')
 

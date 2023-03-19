@@ -11,7 +11,6 @@ import tensorflow as tf
 
 
 def getPrediction(filename):
-    # /classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03
     model_path = "./final_model/"
     model = tf.keras.models.load_model(model_path)
     img = load_img('./static/'+filename, target_size=(180, 180))
@@ -24,13 +23,15 @@ def getPrediction(filename):
     probability_results = 0
 
     if answer == 1:
-        answer = "Recycle"
+        # answer = "Recycle"
+        answer = "可回收垃圾"
         probability_results = probability[0][1]
     else:
-        answer = "Organic"
+        answer = "厨余垃圾"
         probability_results = probability[0][0]
 
     answer = str(answer)
+    probability_results = round(probability_results, 4)
     probability_results = str(probability_results)
 
     values = [answer, probability_results, filename]
